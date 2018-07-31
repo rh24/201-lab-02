@@ -36,18 +36,25 @@ function aboutMe () {
   function question2 () {
     loveBagels = prompt('Do I love bagels?').toLowerCase();
 
-    if (!validInput(bornInLa)) {
-      alert('This is a yes or no question.');
-      question1();
-    } else if (bornInLa === 'yes') {
-      alert('You\'re wrong! I was born in NYC in the borough of Queens.');
-    } else if (bornInLa === 'no') {
-      alert('Correct! I was actually born in Flushing, NY.');
+    if (!valid) {
+      question2();
+    } else if (loveBagels === 'yes') {
+      alert('YES! UNEQUIVOCALLY, YES!');
+    } else if (loveBagels === 'no') {
+      alert('That\'s blasphemy for a New Yorker. We love bagels!');
     }
   }
 
   function question3 () {
     brokenBone = prompt('Have I ever broken a bone?').toLowerCase();
+
+    if (!valid) {
+      question3();
+    } else if (brokenBone === 'yes') {
+      alert('Wrong! I\'ve been lucky!');
+    } else if (brokenBone === 'no') {
+      alert('Correct! Knock on wood, I\'ve never broken a bone.');
+    }
   }
 
   function question4 () {
