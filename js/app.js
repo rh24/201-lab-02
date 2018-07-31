@@ -59,16 +59,26 @@ function aboutMe () {
 
   function question4 () {
     bingeWatch = prompt('Do I binge watch TV?').toLowerCase();
+
+    if (!valid) {
+      question4();
+    } else if (bingeWatch === 'yes') {
+      alert('Definitely, yes. "This Is Us" and "Orange Is The New Black" are the most bingeworthy.');
+    } else if (bingeWatch === 'no') {
+      alert('Incorrect. I need to know what happens next!');
+    }
   }
 
   function question5 () {
     amazingBowler = prompt('Am I an amazing bowler?').toLowerCase();
+
+
   }
 
   question1();
-  // question2();
-  // question3();
-  // question4();
+  question2();
+  question3();
+  question4();
   // question5();
 }
 
