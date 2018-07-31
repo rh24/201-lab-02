@@ -72,14 +72,20 @@ function aboutMe () {
   function question5 () {
     amazingBowler = prompt('Am I an amazing bowler?').toLowerCase();
 
-
+    if (!valid) {
+      question5();
+    } else if (amazingBowler === 'yes') {
+      alert('Hahaha. I usually bowl < 50. Amazing? More like amazingly bad.');
+    } else if (amazingBowler === 'no') {
+      alert('You are correct!');
+    } 
   }
 
   question1();
   question2();
   question3();
   question4();
-  // question5();
+  question5();
 }
 
 aboutMe();
