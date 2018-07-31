@@ -23,6 +23,8 @@ function aboutMe () {
     bornInLa = prompt('Was I born in Los Angeles County?').toLowerCase();
 
     validInput(bornInLa);
+    console.log('Valid response:', valid);
+    console.log('Answer:', bornInLa);
 
     if (!valid) {
       question1();
@@ -36,6 +38,10 @@ function aboutMe () {
   function question2 () {
     loveBagels = prompt('Do I love bagels?').toLowerCase();
 
+    validInput(loveBagels);
+    console.log('Valid response:', valid);
+    console.log('Answer:', loveBagels);
+
     if (!valid) {
       question2();
     } else if (loveBagels === 'yes') {
@@ -47,6 +53,10 @@ function aboutMe () {
 
   function question3 () {
     brokenBone = prompt('Have I ever broken a bone?').toLowerCase();
+
+    validInput(brokenBone);
+    console.log('Valid response:', valid);
+    console.log('Answer:', brokenBone);
 
     if (!valid) {
       question3();
@@ -60,6 +70,10 @@ function aboutMe () {
   function question4 () {
     bingeWatch = prompt('Do I binge watch TV?').toLowerCase();
 
+    validInput(bingeWatch);
+    console.log('Valid response:', valid);
+    console.log('Answer:', bingeWatch);
+
     if (!valid) {
       question4();
     } else if (bingeWatch === 'yes') {
@@ -71,6 +85,10 @@ function aboutMe () {
 
   function question5 () {
     amazingBowler = prompt('Am I an amazing bowler?').toLowerCase();
+
+    validInput(amazingBowler);
+    console.log('Valid response:', valid);
+    console.log('Answer:', amazingBowler);
 
     if (!valid) {
       question5();
