@@ -1,0 +1,31 @@
+{
+  "name": "about-me",
+  "version": "1.0.0",
+  "description": "Code Fellows 201 assignment",
+  "main": "index.js",
+  "dependencies": {
+    "eslint-config-strongloop": "^2.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.2.0",
+    "eslint-config-google": "^0.9.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rh24/201-lab-02.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rh24/201-lab-02/issues"
+  },
+  "homepage": "https://github.com/rh24/201-lab-02#readme"
+}
