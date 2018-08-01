@@ -9,12 +9,17 @@ function aboutMe () {
   let bingeWatch;
   let amazingBowler;
   let valid;
+  let answer;
   // WHy would I declare these variables here and not inside my questions?
   // If in the future, I want to access these variables outside of the question functions scope, these variables must be declared outside of the inner functions' scope. However, I may not want the global execution context to have access to these variables.
 
   function validInput (input) {
-    if (input.toLowerCase() === 'yes' || input.toLowerCase() === 'no') {
+    if (input.toLowerCase() === 'yes'|| input.toLowerCase() === 'y') {
       valid = true;
+      answer = 'yes';
+    } else if (input.toLowerCase() === 'no' || input.toLowerCase() === 'n') {
+      valid = true;
+      answer = 'no';
     } else {
       valid = false;
       alert('This is a yes or no question.');
@@ -30,9 +35,9 @@ function aboutMe () {
 
     if (!valid) {
       question1();
-    } else if (bornInLa === 'yes') {
+    } else if (answer === 'yes') {
       alert('You\'re wrong! I was born in NYC in the borough of Queens.');
-    } else if (bornInLa === 'no') {
+    } else if (answer === 'no') {
       alert('Correct! I was actually born in Flushing, NY.');
     }
   }
@@ -46,9 +51,9 @@ function aboutMe () {
 
     if (!valid) {
       question2();
-    } else if (loveBagels === 'yes') {
+    } else if (answer === 'yes') {
       alert('YES! UNEQUIVOCALLY, YES!');
-    } else if (loveBagels === 'no') {
+    } else if (answer === 'no') {
       alert('That\'s blasphemy for a New Yorker. We love bagels!');
     }
   }
@@ -62,9 +67,9 @@ function aboutMe () {
 
     if (!valid) {
       question3();
-    } else if (brokenBone === 'yes') {
+    } else if (answer === 'yes') {
       alert('Wrong! I\'ve been lucky!');
-    } else if (brokenBone === 'no') {
+    } else if (answer === 'no') {
       alert('Correct! Knock on wood, I\'ve never broken a bone.');
     }
   }
@@ -78,9 +83,9 @@ function aboutMe () {
 
     if (!valid) {
       question4();
-    } else if (bingeWatch === 'yes') {
+    } else if (answer === 'yes') {
       alert('Definitely, yes. "This Is Us" and "Orange Is The New Black" are the most bingeworthy.');
-    } else if (bingeWatch === 'no') {
+    } else if (answer === 'no') {
       alert('Incorrect. I need to know what happens next!');
     }
   }
@@ -94,11 +99,11 @@ function aboutMe () {
 
     if (!valid) {
       question5();
-    } else if (amazingBowler === 'yes') {
+    } else if (answer === 'yes') {
       alert('Hahaha. I usually bowl < 50. Amazing? More like amazingly bad.');
-    } else if (amazingBowler === 'no') {
+    } else if (answer === 'no') {
       alert('You are correct!');
-    } 
+    }
   }
 
   question1();
