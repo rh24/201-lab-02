@@ -18,7 +18,10 @@ const questionsAndAnswers = [
   ]
 ];
 
+// Acceptable answers
 const validInputs = ['yes', 'no', 'y', 'n'];
+
+// Variable to store sanitized version of user's input
 let sanitizedInput;
 
 // Greet the user
