@@ -9,6 +9,8 @@ function aboutMe () {
   let bingeWatch;
   let amazingBowler;
   let valid;
+  // WHy would I declare these variables here and not inside my questions?
+  // If in the future, I want to access these variables outside of the question functions scope, these variables must be declared outside of the inner functions' scope.
 
   function validInput (input) {
     if (input.toLowerCase() === 'yes' || input.toLowerCase() === 'no') {
