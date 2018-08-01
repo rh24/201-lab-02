@@ -48,3 +48,41 @@ for (let j = 0; j < questionsAndAnswers[0].length; j++) {
   // Alert users if they got the right or wrong answer
   sanitizedInput === questionsAndAnswers[1][j] ? alert('Correct!') : alert('Wrong!');
 }
+
+// Sixth question:
+// Ask the user a numeric guessing game that accepts exactly 4 guesses.
+
+const countriesVisited = [
+  'New Zealand',
+  'Mexico',
+  'Canada',
+  'Phillippines',
+  'Taiwan',
+  'China',
+  'Malaysia',
+  'Singapore',
+  'India',
+  'Korea',
+  'Thailand',
+  'Indonesia',
+  'Nepal',
+  'Denmark',
+  'Germany',
+  'Netherlands',
+  'France',
+  'Croatia',
+  'Portugal',
+  'Sweden',
+  'Spain',
+  'UK',
+  'Dominican Republic'
+];
+const guessingGame = prompt('Can you guess how many countries I\'ve visited?');
+let attempt = 1;
+
+while (attempt < 5) {
+  guessingGame;
+  attempt++;
+}
+
+
