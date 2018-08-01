@@ -18,3 +18,9 @@ const questionsAndAnswers = [
   ]
 ];
 
+// Greet the user
+const userName = prompt('What\'s your name ?');
+alert(`Hey, ${userName}. Thanks for visiting my About Me page.`);
+
+
+
