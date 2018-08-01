@@ -104,4 +104,8 @@ if (attempt === 5) {
   alert(`I've been to ${countriesVisited.length} countries.`);
 }
 
+// Seventh question: ask user to guess which countries I've visited. There can be multiple correct answers. The user gets six tries to get one right.
+let guessWhich = prompt('Can you guess a country I\'ve been to? Enter one country name per try.');
 
+
+// Upon using up the tries OR getting one right, all the possible answers display.
