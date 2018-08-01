@@ -90,12 +90,11 @@ while (attempt < 5) {
     // If the user enters a non-number value, they'll be prompted again.
     break;
   } else if (!guessingGame) {
-    alert('Please enter a number.');
-    guessingGame = prompt('Can you guess how many countries I\'ve visited?');
+    guessingGame = Number(prompt('Please enter a number. Can you guess how many countries I\'ve visited?'));
+  } else {
+    guessingGame = Number(prompt('Try again! Can you guess how many countries I\'ve visited?'));
+    attempt++;
   }
-
-  guessingGame = prompt('Try again! Can you guess how many countries I\'ve visited?');
-  attempt++;
 }
 
 // Answer is revealed after 4 failed attempts
