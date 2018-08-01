@@ -10,5 +10,24 @@ header {
 }
 
 li {
-    font-family: sans-serif;
+    font: 18px arial, sans-serif;
+    padding-top: 20px;
+    padding-bottom: 60px;
+}
+
+div {
+    background: white;
+    border-top: 1px solid grey;
+    border-left: 6px solid black;
+    border-right: 1px solid grey;
+    border-bottom: 2px solid grey;
+    padding-left: 30px;
+    padding-right: 15px;
+    margin-left: 0;
+    max-width: 500px;
+}
+
+span {
+    display: block;
+    float: right;
 }
