@@ -13,6 +13,7 @@ function aboutMe () {
   // WHy would I declare these variables here and not inside my questions?
   // If in the future, I want to access these variables outside of the question functions scope, these variables must be declared outside of the inner functions' scope. However, I may not want the global execution context to have access to these variables. That's why I use a closure.
 
+  // Another way to write this function is with a switch statement.
   function validInput (input) {
     if (input.toLowerCase() === 'yes'|| input.toLowerCase() === 'y') {
       valid = true;
