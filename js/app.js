@@ -11,7 +11,7 @@ function aboutMe () {
   let valid;
   let translatedInput;
   // WHy would I declare these variables here and not inside my questions?
-  // If in the future, I want to access these variables outside of the question functions scope, these variables must be declared outside of the inner functions' scope. However, I may not want the global execution context to have access to these variables.
+  // If in the future, I want to access these variables outside of the question functions scope, these variables must be declared outside of the inner functions' scope. However, I may not want the global execution context to have access to these variables. That's why I use a closure.
 
   function validInput (input) {
     if (input.toLowerCase() === 'yes'|| input.toLowerCase() === 'y') {
