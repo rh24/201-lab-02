@@ -104,22 +104,26 @@ const countriesVisited = [
 //   alert(`I've been to ${countriesVisited.length} countries.`);
 // }
 
+
+
 // Seventh question: ask user to guess which countries I've visited. There can be multiple correct answers. The user gets six tries to get one right.
-let guessWhich = prompt('Can you guess a country I\'ve been to? Enter one country name per try.').toLowerCase();
+
+// Joining, then adding a ', ' after the guess seems like a hack-y way to solve this. Is it better to iterate over the entire array in order to find a match?
+let guessWhich = prompt('Can you guess a country I\'ve been to? Enter one country name per try.').toLowerCase() + ', ';
 let tryNumber = 1;
 
 while (tryNumber < 7) {
-  const matchString = countriesVisited.join('').toLowerCase();
+  const matchString = countriesVisited.join(', ').toLowerCase();
 
   console.log(`Attempt ${tryNumber}: ${guessWhich}`);
 
   if (!matchString.includes(guessWhich)) {
-    guessWhich = prompt('I haven\'t been there. Try again...').toLowerCase();
+    guessWhich = prompt('I haven\'t been there. Try again...').toLowerCase() + ', ';
   } else {
     alert(`That's right! ${guessWhich[0].toUpperCase() + guessWhich.slice(1)} was a lot of fun. You should check it out sometime.`);
     break;
   }
-  
+
   tryNumber++;
 }
 
