@@ -87,12 +87,14 @@ let attempt = 2;
 while (attempt < 5) {
   if (guessingGame === countriesVisited.length) {
     alert('Correct!');
-    // If the user enters a non-number value, they'll be prompted again.
     break;
+    // If the user enters a non-number value, they'll be prompted again.
   } else if (!guessingGame) {
     guessingGame = Number(prompt('Please enter a number. Can you guess how many countries I\'ve visited?'));
   } else {
     guessingGame = Number(prompt('Try again! Can you guess how many countries I\'ve visited?'));
+
+    // Only increment attemps if they're valid inputs
     attempt++;
   }
 }
