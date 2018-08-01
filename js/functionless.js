@@ -41,12 +41,6 @@ for (let j = 0; j < questionsAndAnswers[0].length; j++) {
       userInput = prompt(questionsAndAnswers[0][j] + '?').toLowerCase();
     }
   }
-  
-  // for (let i = 0; i < questionsAndAnswers[1].length; i++) {
-  //   if (sanitizedInput === questionsAndAnswers[1][i]) {
-  //     alert('Correct!');
-  //   } else {
-  //     alert('Wrong!');
-  //   }
-  // }
+
+  sanitizedInput === questionsAndAnswers[1][j] ? alert('Correct!') : alert('Wrong!');
 }
