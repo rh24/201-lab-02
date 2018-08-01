@@ -115,3 +115,6 @@ function aboutMe () {
 }
 
 aboutMe();
+
+// Try another solution:
+// Use variables for each question and answer. Make arrays for each question and answer. Have a prompt question function to iterate over each array.
