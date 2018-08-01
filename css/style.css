@@ -1,4 +1,14 @@
 h1 {
     text-align: center;
-    color: magenta;
+    color: white;
+    font-family: sans-serif;
+    padding: 10px;
+}
+
+header {
+    background: green;
+}
+
+li {
+    font-family: sans-serif;
 }
