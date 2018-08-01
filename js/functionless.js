@@ -78,23 +78,23 @@ const countriesVisited = [
   'Dominican Republic'
 ];
 
-let guessingGame = prompt('Can you guess how many countries I\'ve visited?');
+// This is the first attempt
+let guessingGame = Number(prompt('Can you guess how many countries I\'ve visited?'));
 
-// Beginning of user attempts
-let attempt = 1;
+// Continuation of user attempts
+let attempt = 2;
 
 while (attempt < 5) {
   if (guessingGame === countriesVisited.length) {
     alert('Correct!');
-  }
-
-  // If the user enters a non-non number value, they'll be prompted again.
-  if (typeof guessingGame !== 'number') {
+    // If the user enters a non-number value, they'll be prompted again.
+    break;
+  } else if (!guessingGame) {
     alert('Please enter a number.');
-    guessingGame();
+    guessingGame = prompt('Can you guess how many countries I\'ve visited?');
   }
 
-  guessingGame();
+  guessingGame = prompt('Try again! Can you guess how many countries I\'ve visited?');
   attempt++;
 }
 
