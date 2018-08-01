@@ -42,5 +42,6 @@ for (let j = 0; j < questionsAndAnswers[0].length; j++) {
     }
   }
 
+  // Alert users if they got the right or wrong answer
   sanitizedInput === questionsAndAnswers[1][j] ? alert('Correct!') : alert('Wrong!');
 }
