@@ -1,6 +1,11 @@
 'use strict';
 
 // Create one huge multidimensional array that stores the first five questions and answers.
+
+// You can also create an array of objects with key-value pairs.
+// { question: answer }
+// { q1: question, a1: answer, point: x }
+// There are so many ways to do it!
 const questionsAndAnswers = [
   [
     'Was I born in Los Angeles County',
@@ -95,7 +100,6 @@ let guessingGame = Number(prompt('Can you guess how many countries I\'ve visited
 
 // Continuation of user attempts
 let attempt = 2;
-let message;
 
 while (attempt < 5) {
   if (guessingGame === countriesVisited.length) {
@@ -110,21 +114,9 @@ while (attempt < 5) {
     // Only increment attemps if they're valid inputs
     attempt++;
   } else if (guessingGame > countriesVisited.length) {
-    message = Number(prompt('Guess lower...'));
+    guessingGame = Number(prompt('Guess lower...'));
     attempt++;
   }
-
-  // I can't get this switch statement to work.
-  // switch (guessingGame) {
-  // case guessingGame < countriesVisited.length:
-  //   message = Number(prompt('Guess higher...'));
-  //   break;
-  // case guessingGame > countriesVisited.length:
-  //   message = Number(prompt('Guess lower...'));
-  //   break;
-  // default:
-  //   message = 'test';
-  // }
 }
 
 // Answer is revealed after 4 failed attempts
