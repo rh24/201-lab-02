@@ -1,4 +1,5 @@
 'use strict';
+console.log('the js is working!');
 
 // Create one huge multidimensional array that stores the first five questions and answers.
 
