@@ -23,26 +23,24 @@ function aboutMe () {
   function askQuestions() {
     for (let dataSet of questionsAndAnswers) {
       userInput = prompt(dataSet['q']);
-
       while (!valid) {
-        validInput(userInput);
-        userInput = prompt(dataSet['q']);
+        validInput(userInput, dataSet['q']);
       }
 
-      if (sanitizedInput === dataSet['a']) {
-        alert('Correct!');
+      if (sanitizedInput === 'yes') {
+        alert(dataSet['y']);
       } else {
-        alert('Wrong!');
+        alert(dataSet['n']);
       }
     }
   }
 
-  function validInput(input) {
+  function validInput(input, question) {
     let lowerCased = input.toLowerCase();
 
     if (!validInputs.includes(lowerCased)) {
       valid = false;
-      alert('This is a yes or no question.');
+      userInput = prompt(`This is a yes or no question. ${question}`);
     } else if (lowerCased === 'yes'|| lowerCased === 'y') {
       valid = true;
       sanitizedInput = 'yes';
