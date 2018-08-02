@@ -159,7 +159,14 @@ while (tryNumber < 7) {
 }
 
 // Upon using up the tries OR getting one right, all the possible answers display.
+if (tryNumber === 7 || matchString.includes(guessWhich)) {
+  const countriesUpToLast = countriesVisited.slice(0, countriesVisited.length-1);
+  const lastCountry = ', and ' + countriesVisited[countriesVisited.length-1];
 
+  // Test if I've correctly concatenated 'and'
+  console.log(lastCountry);
+  alert(`I've been to ${countriesUpToLast.join(', ') + lastCountry}. They were all really cool!`);
+}
 
 // Keep a tally of all the questions the user has gotten correct
-alert(`You got ${tally.correct}/${tally.incorrect + tally.correct} on this quiz. Thanks for playing!!`);
+alert(`You got ${tally.correct}/${tally.incorrect + tally.correct} on this quiz. Thanks for playing, ${userName}!!`);
