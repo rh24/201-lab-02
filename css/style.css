@@ -1,18 +1,28 @@
+header {
+    background: green;
+    
+}
+
 h1 {
     text-align: center;
     color: white;
-    font-family: sans-serif;
+    font: bold 30px arial, sans-serif;
     padding: 10px;
-}
-
-header {
-    background: green;
+    border-bottom: 5px solid grey;
 }
 
 li {
     font: 18px arial, sans-serif;
     padding-top: 20px;
     padding-bottom: 60px;
+}
+
+h2 {
+    font: 30px arial, sans-serif;
+    background: seagreen;
+    border-bottom: 5px solid grey;
+    margin-top: 20px;
+    text-align: center;
 }
 
 div {
@@ -33,4 +43,8 @@ div {
 span {
     display: block;
     float: right;
+}
+
+article ol li {
+    margin: 0 auto;
 }
