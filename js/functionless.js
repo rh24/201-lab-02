@@ -105,6 +105,7 @@ const countriesVisited = [
 const guessNumber = () => {
   // This is the first attempt
   let guessingGame = Number(prompt('Can you guess how many countries I\'ve visited?'));
+  let message;
 
   // Continuation of user attempts
   let attempt = 2;
@@ -116,15 +117,17 @@ const guessNumber = () => {
       break;
       // If the user enters a non-number value, they'll be prompted again.
     } else if (!guessingGame) {
-      guessingGame = Number(prompt('Please enter a number. Can you guess how many countries I\'ve visited?'));
+      message = 'Please enter a number. Can you guess how many countries I\'ve visited?';
     } else if (guessingGame < countriesVisited.length) {
-      guessingGame = Number(prompt('Guess higher...'));
+      message = 'Guess higher...';
       // Only increment attemps if they're valid inputs
       attempt++;
     } else if (guessingGame > countriesVisited.length) {
-      guessingGame = Number(prompt('Guess lower...'));
+      message = 'Guess lower...';
       attempt++;
     }
+
+    guessingGame = Number(prompt(message));
   }
 
   // Answer is revealed after 4 failed attempts
@@ -134,34 +137,31 @@ const guessNumber = () => {
   }
 };
 
+// Seventh question: ask user to guess which countries I've visited. There can be multiple correct answers. The user gets six tries to get one right.
 const guessCountry = (userName) => {
-  // Seventh question: ask user to guess which countries I've visited. There can be multiple correct answers. The user gets six tries to get one right.
-
   let guessWhich = prompt('Can you guess a country I\'ve been to? Enter one country name per try.').toLowerCase();
   let tryNumber = 1;
+  const lowerCaseCountries = [];
 
-  while (tryNumber < 7) {
+  // Create an array of lower-cased countries
+  for (let i = 0; i < countriesVisited.length; i++) {
+    lowerCaseCountries.push(countriesVisited[i].toLowerCase());
+  }
 
+  while (!lowerCaseCountries.includes(guessWhich) || tryNumber < 7) {
     console.log(`Attempt ${tryNumber}: ${guessWhich}`);
+
+    if (lowerCaseCountries.includes(guessWhich)) {
+      tally.correct++;
+      alert(`That's right! ${guessWhich[0].toUpperCase() + guessWhich.slice(1)} was a lot of fun. You should check it out sometime.`);
+      break;
+    }
 
     if (guessWhich.replace(/ /g,'') === '') {
       guessCountry();
     } else {
-      const lowerCaseCountries = [];
-
-      for (let i = 0; i < countriesVisited.length; i++) {
-        lowerCaseCountries.push(countriesVisited[i].toLowerCase());
-      }
-
-      if (lowerCaseCountries.includes(guessWhich)) {
-        tally.correct++;
-        alert(`That's right! ${guessWhich[0].toUpperCase() + guessWhich.slice(1)} was a lot of fun. You should check it out sometime.`);
-        break;
-      } else {
-        guessWhich = prompt('I haven\'t been there. Try again...').toLowerCase();
-        tryNumber++;
-        guessCountry();
-      }
+      guessWhich = prompt('I haven\'t been there. Try again...').toLowerCase();
+      tryNumber++;
     }
   }
 
