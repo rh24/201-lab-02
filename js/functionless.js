@@ -137,10 +137,11 @@ const guessNumber = () => {
   }
 };
 
+let tryNumber = 1;
+
 // Seventh question: ask user to guess which countries I've visited. There can be multiple correct answers. The user gets six tries to get one right.
 const guessCountry = (userName) => {
   let guessWhich = prompt('Can you guess a country I\'ve been to? Enter one country name per try.').toLowerCase();
-  let tryNumber = 1;
   const lowerCaseCountries = [];
 
   // Create an array of lower-cased countries
@@ -151,34 +152,38 @@ const guessCountry = (userName) => {
   while (!lowerCaseCountries.includes(guessWhich) || tryNumber < 7) {
     console.log(`Attempt ${tryNumber}: ${guessWhich}`);
 
-    if (lowerCaseCountries.includes(guessWhich)) {
-      tally.correct++;
-      alert(`That's right! ${guessWhich[0].toUpperCase() + guessWhich.slice(1)} was a lot of fun. You should check it out sometime.`);
+    if (tryNumber === 7) {
+      displayAllCountries();
       break;
     }
 
     if (guessWhich.replace(/ /g,'') === '') {
-      guessCountry();
+      guessWhich = prompt('Play the game!');
+    } else if (lowerCaseCountries.includes(guessWhich)) {
+      tally.correct++;
+      alert(`That's right! ${guessWhich[0].toUpperCase() + guessWhich.slice(1)} was a lot of fun. You should check it out sometime.`);
+      displayAllCountries();
+      break;
     } else {
       guessWhich = prompt('I haven\'t been there. Try again...').toLowerCase();
       tryNumber++;
     }
   }
 
-  // Upon using up the tries OR getting one right, all the possible answers display.
-  if (tryNumber === 7) {
+  function displayAllCountries() {
+    // Upon using up the tries OR getting one right, all the possible answers display.
     const countriesUpToLast = countriesVisited.slice(0, countriesVisited.length-1);
     const lastCountry = ', and ' + countriesVisited[countriesVisited.length-1];
     tally.incorrect++;
 
-
     // Test if I've correctly concatenated 'and'
     console.log(lastCountry);
     alert(`I've been to ${countriesUpToLast.join(', ') + lastCountry}. They were all really cool!`);
-  }
 
-  // Keep a tally of all the questions the user has gotten correct
-  alert(`You got ${tally.correct}/${tally.incorrect + tally.correct} on this quiz. Thanks for playing, ${userName}!!`);
+    // Keep a tally of all the questions the user has gotten correct
+    alert(`You got ${tally.correct}/${tally.incorrect + tally.correct} on this quiz. Thanks for playing, ${userName}!!`);
+    return;
+  }
 };
 
 
