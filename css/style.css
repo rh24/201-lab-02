@@ -26,7 +26,7 @@ h2 {
 }
 
 div {
-    background: white;
+    background-color: hsla(360, 100%, 100%, .65);
     border-top: 1px solid grey;
     border-left: 6px solid black;
     border-right: 1px solid grey;
@@ -47,4 +47,15 @@ span {
 
 article ol li {
     margin: 0 auto;
+}
+
+body {
+    background-image: url('../images/max-rosero-763523-unsplash.jpg');
+    background-size: contain;
+}
+
+#background-image {
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
 }
