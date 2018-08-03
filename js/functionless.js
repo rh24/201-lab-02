@@ -137,29 +137,36 @@ const guessNumber = () => {
 const guessCountry = (userName) => {
   // Seventh question: ask user to guess which countries I've visited. There can be multiple correct answers. The user gets six tries to get one right.
 
-  // Joining, then adding a ', ' after the guess seems like a hack-y way to solve this. Is it better to iterate over the entire array in order to find a match?
-  let guessWhich = prompt('Can you guess a country I\'ve been to? Enter one country name per try.').toLowerCase() + ', ';
+  let guessWhich = prompt('Can you guess a country I\'ve been to? Enter one country name per try.').toLowerCase();
   let tryNumber = 1;
-  const matchString = countriesVisited.join(', ').toLowerCase();
 
   while (tryNumber < 7) {
 
     console.log(`Attempt ${tryNumber}: ${guessWhich}`);
 
-    if (!matchString.includes(guessWhich)) {
-      guessWhich = prompt('I haven\'t been there. Try again...').toLowerCase() + ', ';
-    }
-    if (matchString.includes(guessWhich)) {
-      tally.correct++;
-      alert(`That's right! ${guessWhich[0].toUpperCase() + guessWhich.slice(1)} was a lot of fun. You should check it out sometime.`);
-      break;
-    }
+    if (guessWhich.replace(/ /g,'') === '') {
+      guessCountry();
+    } else {
+      const lowerCaseCountries = [];
 
-    tryNumber++;
+      for (let i = 0; i < countriesVisited.length; i++) {
+        lowerCaseCountries.push(countriesVisited[i].toLowerCase());
+      }
+
+      if (lowerCaseCountries.includes(guessWhich)) {
+        tally.correct++;
+        alert(`That's right! ${guessWhich[0].toUpperCase() + guessWhich.slice(1)} was a lot of fun. You should check it out sometime.`);
+        break;
+      } else {
+        guessWhich = prompt('I haven\'t been there. Try again...').toLowerCase();
+        tryNumber++;
+        guessCountry();
+      }
+    }
   }
 
   // Upon using up the tries OR getting one right, all the possible answers display.
-  if (tryNumber === 7 || matchString.includes(guessWhich)) {
+  if (tryNumber === 7) {
     const countriesUpToLast = countriesVisited.slice(0, countriesVisited.length-1);
     const lastCountry = ', and ' + countriesVisited[countriesVisited.length-1];
     tally.incorrect++;
